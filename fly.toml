@@ -1,17 +1,18 @@
-# fly.toml app configuration file generated for 8trider-web on 2023-10-23T11:45:51+09:00
+# fly.toml app configuration file generated for 8trider on 2023-10-23T13:32:36+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "8trider-web"
+app = "8trider"
 primary_region = "nrt"
 
 [build]
+  dockerfile = "Dockerfile"
 
 [http_service]
-  internal_port = 8080
+  internal_port = 80
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 3
   processes = ["app"]
